@@ -10,10 +10,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-const swaggerUi = require('swagger-ui-express'), swaggerDocument = require('./swagger.json');
-
-app.get('/', (req, res) => res.send('Hello World!'));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.get('/api', (req, res) => res.send('Hello World!'));
 
 routerApi(app);
 app.use(logErrors);
